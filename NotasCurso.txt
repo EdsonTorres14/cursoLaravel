@@ -1,0 +1,21 @@
+Video 176 -179 
+--------------------------
+Laravel Breeze: Incluye funciones de crear, autenticar, resetear password, confirmar y verificar email de cuentas, hecho con Blade y talwind CSS. 
+Otros paquetes:
+
+    * Fortify: Es un paquete de autenticación para el frontend que utiliza implementación del backend de laravel, tiene autenticación en 2 factores, 
+    no incluye interfaz de usuario.
+
+    * Sanctum: Esta diseñado para autenticación para aplicaciones hechas con Angular, Vue, Next.js, Nuxt o React. Utiliza endpoints de breeze y 
+    permite endpoints para almacenar y generar tokens que permitan el acceso a el backend de laravel, utiliza breeze y también puede ser utilizado 
+    junto a Fortify.
+
+    * Jestream: Es una interfaz completa para aplicaciones en laravel, esta diseñada con Talwind CSS y puede ser utilizada junto Inertia o Livewire,
+    utiliza Sactum para autenticar usuarios e incluye funciones de registro, login, autenticación de dos factores (2FA), sesiones, tokens, 
+    verificación de email y password reset. 
+
+Instalación:
+    composer required laravel/breeze –dev 
+    php artisan breeze:install
+    npm install 
+    npm run dev 
