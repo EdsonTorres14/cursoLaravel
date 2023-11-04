@@ -27,3 +27,12 @@ Instalar Livewire
 
 Crear class y view
     php artisan make:livewire CrearVacante
+
+Ejecutar Seeder
+    php artisan db:seed
+Ejecutar un seeder en especifico
+    php artisan db:seed --class=CategoriasSeeder
+
+
+Elimina tablas creadas en el momento 
+    php artisan migrate:rollback
