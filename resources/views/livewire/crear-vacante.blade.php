@@ -66,15 +66,21 @@
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full h-72"
             placeholder="Descripción general del puesto, experiencía"></textarea>
 
-            @error('descripcion')
+        @error('descripcion')
             <livewire:mostrar-alerta :message="$message" />
         @enderror
     </div>
 
     <div>
         <x-input-label for="imagen" :value="__('Imagen')" />
-        <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen" accept="image/*"/>
+        <x-text-input id="imagen" class="block mt-1 w-full" type="file" wire:model="imagen" accept="image/*" />
 
+        <div class="my-5 w-80">
+            @if ($imagen)
+                Imagen:
+                <img src="{{ $imagen->temporaryUrl() }}">
+            @endIf
+        </div>
         @error('imagen')
             <livewire:mostrar-alerta :message="$message" />
         @enderror
