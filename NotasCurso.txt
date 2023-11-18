@@ -33,6 +33,8 @@ Ejecutar Seeder
 Ejecutar un seeder en especifico
     php artisan db:seed --class=CategoriasSeeder
 
-
 Elimina tablas creadas en el momento 
     php artisan migrate:rollback
+
+Elimina llaves foraneas
+    $table->dropForeign('vacantes_user_id_foreign');
