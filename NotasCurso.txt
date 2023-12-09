@@ -38,3 +38,8 @@ Elimina tablas creadas en el momento
 
 Elimina llaves foraneas
     $table->dropForeign('vacantes_user_id_foreign');
+
+
+Cambio de idioma en la paginación, se obtiene la copia del directorio de paginación dentro de resources/views/vendor
+    php artisan vendor:publish --tag=laravel-pagination
+Y se cambia en el archivo talwind.blade.php los elementos de la aginación 
