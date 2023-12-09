@@ -21,7 +21,6 @@ Instalación:
     npm run dev 
 
 
-
 Instalar Livewire
     composer require livewire/livewire
 
@@ -30,6 +29,7 @@ Crear class y view
 
 Ejecutar Seeder
     php artisan db:seed
+
 Ejecutar un seeder en especifico
     php artisan db:seed --class=CategoriasSeeder
 
@@ -42,4 +42,8 @@ Elimina llaves foraneas
 
 Cambio de idioma en la paginación, se obtiene la copia del directorio de paginación dentro de resources/views/vendor
     php artisan vendor:publish --tag=laravel-pagination
-Y se cambia en el archivo talwind.blade.php los elementos de la aginación 
+    
+    * Y se cambia en el archivo talwind.blade.php los elementos de la aginación 
+
+Método mount()
+    Cuando el componente fue instanciado se ejecuta solamente una vez 
