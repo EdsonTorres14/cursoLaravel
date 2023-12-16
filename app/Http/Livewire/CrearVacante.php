@@ -59,6 +59,7 @@ class CrearVacante extends Component
         return redirect()->route('vacantes.index');
 
     }
+
     public function render()
     {
         // Consultar BD
