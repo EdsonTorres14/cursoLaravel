@@ -18,10 +18,11 @@
                         class="bg-blue-800 py-2 px-4 rounded-lg text-xs text-white font-bold uppercase text-center">
                         Editar
                     </a>
-                    <a href="#"
+                    <button 
+                        wire:click="$emit('prueba', {{ $vacante->id}})"
                         class="bg-red-600 py-2 px-4 rounded-lg text-xs text-white font-bold uppercase text-center">
                         Eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -37,6 +38,9 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
+            Livewire.on('prueba', vacanteId => {
+                alert(vacanteId);
+            })
             Swal.fire({
                 title: "¿Eliminar Vacante?",
                 text: "Una vacante eliminada no se puede recuperar",
