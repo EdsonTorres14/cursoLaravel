@@ -18,8 +18,7 @@
                         class="bg-blue-800 py-2 px-4 rounded-lg text-xs text-white font-bold uppercase text-center">
                         Editar
                     </a>
-                    <button 
-                        wire:click="$emit('prueba', {{ $vacante->id}})"
+                    <button wire:click="$emit('mostrarAlerta', {{ $vacante->id }})"
                         class="bg-red-600 py-2 px-4 rounded-lg text-xs text-white font-bold uppercase text-center">
                         Eliminar
                     </button>
@@ -38,27 +37,29 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
-            Livewire.on('prueba', vacanteId => {
-                alert(vacanteId);
+            Livewire.on('mostrarAlerta', vacanteId => {
+                Swal.fire({
+                    title: "¿Eliminar Vacante?",
+                    text: "Una vacante eliminada no se puede recuperar",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, ¡Eliminar!",
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        //Eliminar la vacante
+
+                        Livewire.emit('eliminarVacante', vacanteId)
+                        Swal.fire({
+                            title: "Se elimino la Vacante!",
+                            text: "Eliminado correctamente.",
+                            icon: "success"
+                        });
+                    }
+                });
             })
-            Swal.fire({
-                title: "¿Eliminar Vacante?",
-                text: "Una vacante eliminada no se puede recuperar",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Si, ¡Eliminar!",
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                    });
-                }
-            });
         </script>
     @endpush
 </div>

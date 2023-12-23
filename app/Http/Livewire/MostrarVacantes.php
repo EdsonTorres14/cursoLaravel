@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class MostrarVacantes extends Component
 {
-    protected $listeners = ['prueba'];
+    protected $listeners = ['eliminarVacante'];
 
-    public function prueba($vacante_id)
+    public function eliminarVacante(Vacante $vacante)
     {
-        dd($vacante_id);
+        $vacante->delete();
     }
     public function render()
     {
